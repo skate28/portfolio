@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingMessage = appendMessage('assistant', '...');
 
     try {
-      const response = await fetch('https://aquamarine-lebkuchen-8ed861.netlify.app/api/chat', {
+      const response = await fetch('/.netlify/functions/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

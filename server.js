@@ -32,8 +32,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000  // Updated to use the PORT environment variable
 
 // Serve static files from your main project folder
-//app.use(express.static(path.join(__dirname, '..', 'assets')));
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(__dirname));
 
 // Serve the main HTML file for the root route
 app.get('/', (req, res) => {

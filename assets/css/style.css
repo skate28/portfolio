@@ -1008,18 +1008,38 @@ main {
   margin-bottom: 25px;
 }
 
-.filter-select {
-  background: var(--eerie-black-2);
-  color: var(--light-gray);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 12px 16px;
+.form-select {
+  appearance: none;
+  background-color: var(--smoky-black);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
   border: 1px solid var(--jet);
-  border-radius: 14px;
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  transition: border-color 0.25s ease;
+  color: var(--white-2);
+}
+
+/* Make the selected option text style match input text */
+.form-select:not(:focus):not(:active) option:checked {
+  color: var(--white-2);
+  font-weight: var(--fw-400);
+}
+
+.form-select:focus {
+  border-color: var(--orange-yellow-crayola);
+}
+
+.form-select option {
+  background-color: var(--eerie-black);
+  color: var(--white-2);
+  padding: 10px;
+}
+
+/* Improve contrast for placeholder-like selected options */
+.form-select option[disabled]:first-child {
+  color: var(--light-gray-70);
 }
 
 .filter-select.active .select-icon { transform: rotate(0.5turn); }
@@ -2427,4 +2447,68 @@ textarea.form-input::-webkit-resizer { display: none; }
 .calendly-btn ion-icon {
   font-size: 20px;
   color: var(--white-1);
+}
+
+/* Form select styling */
+.form-select {
+  appearance: none;
+  background-color: var(--smoky-black);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
+}
+
+.form-select option {
+  background-color: var(--eerie-black);
+  color: var(--white-2);
+  padding: 10px;
+}
+
+/* Improve contrast for placeholder-like selected options */
+.form-select option[disabled]:first-child {
+  color: var(--light-gray-70);
+}
+
+/* Form checkbox styling */
+.form-checkbox-wrapper {
+  margin-bottom: 25px;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+}
+
+.form-checkbox {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--orange-yellow-crayola);
+}
+
+/* Form section title */
+.form-section-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  margin-bottom: 15px;
+  font-weight: var(--fw-500);
+}
+
+/* Form field hint text */
+.form-field-hint {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  margin-top: 5px;
+}
+
+/* Responsive adjustments for the enhanced form */
+@media (max-width: 580px) {
+  .input-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
